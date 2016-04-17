@@ -82,13 +82,17 @@ app.post('/webhook/', function (req, res) {
   res.sendStatus(200);
 });
 
+
+
+var token = "CAAMflYosOuoBAJ6sI3BZCG0R2ZCWmFA1hYcJvhuzYrkueiVX5VZAJe0WQQVOOZAtZC2LHj0xB9kLP4F5ZCF4eHmeMdQgyZB0l8lvIggc3A7qTlRktGpFUDztH0zEtdZCLuBIFBS3ZBebyE1qPjoi0byzaNrlZABicvBWvqWsOzTZA6v2OYkVQFPUblryzsQb5eZC5i7MttiaMYMLeAZDZD";
+
 function sendTextMessage(sender, text) {
   messageData = {
     text:text
   }
-  request({
+    request({
     url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token:"CAAMflYosOuoBAJ6sI3BZCG0R2ZCWmFA1hYcJvhuzYrkueiVX5VZAJe0WQQVOOZAtZC2LHj0xB9kLP4F5ZCF4eHmeMdQgyZB0l8lvIggc3A7qTlRktGpFUDztH0zEtdZCLuBIFBS3ZBebyE1qPjoi0byzaNrlZABicvBWvqWsOzTZA6v2OYkVQFPUblryzsQb5eZC5i7MttiaMYMLeAZDZD"},
+    qs: {access_token: token},
     method: 'POST',
     json: {
       recipient: {id:sender},

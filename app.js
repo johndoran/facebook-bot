@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var request = require('request');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -45,6 +46,7 @@ app.use(function(err, req, res, next) {
 
 
 app.get('/webhook/', function (req, res) {
+  console.log(req.query)
   if (req.query['hub.verify_token'] === 'FB_MESSENGER_ECHO_TOKEN') {
     return res.send(req.query['hub.challenge']);
   }
@@ -56,8 +58,11 @@ app.post('/webhook/', function (req, res) {
   for (i = 0; i < messaging_events.length; i++) {
     event = req.body.entry[0].messaging[i];
     sender = event.sender.id;
+    console.log("Sender: " + sender)
+    console.log("Event: " + event)
     if (event.message && event.message.text) {
       text = event.message.text;
+      console.log("Text: " + text())
       if (text === 'Generic') {
         sendGenericMessage(sender);
         continue;

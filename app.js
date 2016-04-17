@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var request = require('request');
 
@@ -365,10 +364,10 @@ function sendButton(sender) {
                     {
                         "type":"postback",
                         "title":"Start Chatting",
-                        "payload":"USER_DEFINED_PAYLOAD"
+                        "payload": "USER_DEFINED_PAYLOAD"
                     }
                 ]
-            };
+            }}};
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: token},

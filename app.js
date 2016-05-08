@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 });
 
 app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+    console.log('Listening on port 3000!');
 });
 
 var app = express();
@@ -105,9 +105,9 @@ function sendGenericMessage(sender) {
                 "template_type": "generic",
                 "elements": [
                     {
-                        "title": "Classic White T-Shirt",
-                        "image_url": "http://petersapparel.parseapp.com/img/item100-thumb.png",
-                        "subtitle": "Soft white cotton t-shirt is back in style",
+                        "title": "Haircut and beard trim",
+                        "image_url": "http://i0.wp.com/therighthairstyles.com/wp-content/uploads/2014/12/17-tapered-haircut-and-neat-side.jpg?w=500",
+                        "subtitle": "Hair cut and beard trim",
                         "buttons": [
                             {
                                 "type": "web_url",
@@ -127,9 +127,9 @@ function sendGenericMessage(sender) {
                         ]
                     },
                     {
-                        "title": "Classic Grey T-Shirt",
-                        "image_url": "http://petersapparel.parseapp.com/img/item101-thumb.png",
-                        "subtitle": "Soft gray cotton t-shirt is back in style",
+                        "title": "Shave",
+                        "image_url": "http://hauteliving.com/wp-content/uploads/2010/10/Qua-mens-shave.jpg",
+                        "subtitle": "Hot towel shave",
                         "buttons": [
                             {
                                 "type": "web_url",
@@ -160,58 +160,6 @@ function sendGenericMessage(sender) {
             recipient: {id: sender},
             message: messageData,
         }
-    }, function (error, response, body) {
-        if (error) {
-            console.log('Error sending message: ', error);
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        }
-    });
-}
-
-function sendWelcome(sender) {
-    var json = {
-        recipient: {id: sender},
-        "setting_type":"call_to_actions",
-        "thread_state":"new_thread",
-        "call_to_actions":[
-            {
-                "message":{
-                    "attachment":{
-                        "type":"template",
-                        "payload":{
-                            "template_type":"generic",
-                            "elements":[
-                                {
-                                    "title":"Welcome to My Company!",
-                                    "item_url":"https://www.petersbowlerhats.com",
-                                    "image_url":"https://www.petersbowlerhats.com/img/hat.jpeg",
-                                    "subtitle":"We have the right hat for everyone.",
-                                    "buttons":[
-                                        {
-                                            "type":"web_url",
-                                            "title":"View Website",
-                                            "url":"https://www.petersbowlerhats.com"
-                                        },
-                                        {
-                                            "type":"postback",
-                                            "title":"Start Chatting",
-                                            "payload":"DEVELOPER_DEFINED_PAYLOAD"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-        ]
-    };
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: token},
-        method: 'POST',
-        json: json
     }, function (error, response, body) {
         if (error) {
             console.log('Error sending message: ', error);

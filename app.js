@@ -196,6 +196,7 @@ function sendGenericMessage(sender) {
 
 function sendWelcome(sender) {
     var json = {
+        recipient: {id: sender},
         "setting_type":"call_to_actions",
         "thread_state":"new_thread",
         "call_to_actions":[

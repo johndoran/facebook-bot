@@ -253,7 +253,7 @@ function sendImage(sender) {
         "attachment":{
             "type":"image",
             "payload":{
-                "url":"https://petersapparel.com/img/shirt.png"
+                "url":"http://az616578.vo.msecnd.net/files/2016/02/28/6359221946775014221897708441_beauty-products-mg-main.jpg"
             }
         }
     };

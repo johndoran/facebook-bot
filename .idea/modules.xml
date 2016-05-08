@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/facebook-support.iml" filepath="$PROJECT_DIR$/facebook-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebook-bot.iml" filepath="$PROJECT_DIR$/facebook-bot.iml" />
     </modules>
   </component>
 </project>

@@ -75,10 +75,6 @@ app.post('/webhook/', function (req, res) {
                 sendTextMessage(sender, "Yeah he really is a dick");
                 continue;
             }
-            if (text === 'Welcome') {
-                sendWelcome(sender)
-                continue;
-            }
             if (text === 'Image') {
                 sendImage(sender)
                 continue;
@@ -278,28 +274,20 @@ function sendRec(sender) {
             "type":"template",
             "payload":{
                 "template_type":"receipt",
-                "recipient_name":"Stephane Crozatier",
-                "order_number":"12345678902",
+                "recipient_name":"John Doran",
+                "order_number":"12323245678902",
                 "currency":"USD",
                 "payment_method":"Visa 2345",
                 "order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
                 "timestamp":"1428444852",
                 "elements":[
                     {
-                        "title":"Classic White T-Shirt",
-                        "subtitle":"100% Soft and Luxurious Cotton",
-                        "quantity":2,
+                        "title":"Mens haircut",
+                        "subtitle":"Beard and hair trim",
+                        "quantity":1,
                         "price":50,
                         "currency":"USD",
-                        "image_url":"http://petersapparel.parseapp.com/img/whiteshirt.png"
-                    },
-                    {
-                        "title":"Classic Gray T-Shirt",
-                        "subtitle":"100% Soft and Luxurious Cotton",
-                        "quantity":1,
-                        "price":25,
-                        "currency":"USD",
-                        "image_url":"http://petersapparel.parseapp.com/img/grayshirt.png"
+                        "image_url":"http://i0.wp.com/therighthairstyles.com/wp-content/uploads/2014/12/17-tapered-haircut-and-neat-side.jpg?w=500"
                     }
                 ],
                 "address":{
